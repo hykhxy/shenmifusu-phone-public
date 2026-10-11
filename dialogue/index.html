@@ -1,0 +1,197 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>神秘复苏 · 对话侧栏预览</title><style>body{margin:0;background:#0c1013;color:#e9e1d2;font-family:Microsoft YaHei,sans-serif}main{max-width:1000px;margin:auto;padding:24px 20px 70px}header{font-size:12px;letter-spacing:.13em;color:#b9b2a6;margin-bottom:20px}header h1{font-size:23px;color:#ddbd83;font-weight:500}footer{color:#b9b2a6;font-size:12px;margin-top:22px}@media(max-width:480px){main{padding:14px 9px 40px}header h1{font-size:19px}}
+/* 神秘复苏 · 对话卷宗。仅作用于含直属抽屉的顶层 details。
+   消息内不依赖 JS、class、id 或行内 style。name 由 TalkAI 按消息隔离。 */
+details:not(details details):has(> details) {
+  --smfs-bg:#d8b78a; --smfs-surface:#ead1ac; --smfs-text:#30221a;
+  --smfs-muted:#624632; --smfs-accent:#9b3626; --smfs-gold:#62351e;
+  position:relative!important; isolation:isolate; box-sizing:border-box!important;
+  margin:14px 0!important; padding:0 20px 26px 0!important;
+  min-height:690px; width:100%; max-width:100%;
+  border:1px solid #895239!important; border-top:2px solid #ad6344!important;
+  border-radius:10px!important;
+  background:linear-gradient(110deg,#efd8af16,#ffefd010 58%,#793b2218),url("https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/skin-parchment.png") center/cover no-repeat,var(--smfs-bg)!important;
+  color:var(--smfs-text)!important; font:16px/1.95 "Songti SC","STSong","SimSun",serif!important;
+  box-shadow:0 18px 48px #0008,0 0 24px #aa64283a,inset 0 0 0 1px #ffdda770; overflow:clip;
+  animation:smfs-frame-breathe 7s ease-in-out infinite;
+}
+details:not(details details):has(> details) * {box-sizing:border-box;}
+/* CSS-only fog and light; the actual wallpaper is an anonymous public HTTPS asset. */
+details:not(details details):has(> details)::before {
+  content:""; position:absolute; inset:130px -30px -35px; z-index:0; pointer-events:none;
+  background:radial-gradient(ellipse at 15% 72%,#944f2b20,transparent 52%),radial-gradient(ellipse at 85% 22%,#a5483620,transparent 48%);
+  filter:blur(18px); animation:smfs-fog-drift 16s ease-in-out infinite alternate;
+}
+details:not(details details):has(> details)::after {
+  content:""; position:absolute; inset:0; z-index:5; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(#f4c084,#f4c084) left top/32px 1px no-repeat,linear-gradient(#f4c084,#f4c084) left top/1px 32px no-repeat,linear-gradient(#793b26,#793b26) right bottom/32px 1px no-repeat,linear-gradient(#793b26,#793b26) right bottom/1px 32px no-repeat;
+  box-shadow:inset 0 0 35px #77331823;
+}
+details:not(details details):has(> details) > summary {
+  display:block!important; position:relative; z-index:1; margin:0!important; padding:27px 24px 22px!important; min-height:156px;
+  background:linear-gradient(90deg,#f8e6c675,#f6dfb035 56%,#8e452514),url("https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/skin-parchment.png") center 12%/cover no-repeat!important;
+  border:0!important; border-bottom:1px solid #7b462c80!important;
+  color:var(--smfs-gold)!important; list-style:none!important; letter-spacing:.08em;
+  font:600 17px/1.8 "Microsoft YaHei",sans-serif!important; cursor:pointer; text-shadow:0 1px 2px #fff0ca90;
+}
+details:not(details details):has(> details) > summary::before {
+  content:""; position:absolute; left:0; right:0; bottom:0; height:2px; pointer-events:none;
+  background:linear-gradient(90deg,transparent,#b2602c,transparent); background-size:45% 100%; background-repeat:no-repeat;
+  animation:smfs-seal-light 9s ease-in-out infinite;
+}
+details:not(details details):has(> details) > summary::after {
+  content:"人 皮 纸  /  秘 档 显 影 中"; display:block; margin-top:13px; color:#683b25;
+  font:10px/1.7 "Microsoft YaHei",sans-serif; letter-spacing:.22em;
+}
+details:not(details details):has(> details):not([open]) {min-height:0; padding:0!important;}
+details:not(details details):has(> details) summary::marker {content:"";}
+details:not(details details):has(> details) summary::-webkit-details-marker {display:none;}
+details:not(details details):has(> details) > blockquote {
+  position:relative; z-index:1; margin:17px 0 16px 86px!important; padding:10px 12px!important;
+  border:0!important; border-left:2px solid #b8433d!important;
+  background:#f3dfbbbd!important; color:var(--smfs-muted)!important; box-shadow:0 4px 20px #51220c18;
+  font:12px/1.7 "Microsoft YaHei",sans-serif!important;
+}
+details:not(details details):has(> details) > blockquote p {margin:0!important;}
+details:not(details details):has(> details) > div:first-of-type {
+  position:relative; z-index:1; margin:0 0 0 86px!important; padding:18px 20px 10px!important;
+  border:1px solid #8f593650; border-radius:7px; background:linear-gradient(140deg,#fff0d2b0,#efc997a8)!important;
+  box-shadow:0 8px 25px #63341920; text-shadow:0 1px 1px #fff3d270; letter-spacing:.025em;
+  color:var(--smfs-text)!important; text-align:left!important;
+  overflow-wrap:anywhere; transition:opacity .18s;
+}
+details:not(details details):has(> details) > div:first-of-type > p {
+  padding:0!important; margin:0 0 1em!important; color:inherit!important; line-height:1.95!important;
+}
+details:not(details details):has(> details) > div:first-of-type blockquote {
+  margin:15px 0!important; border-left:2px solid #b8433d!important; padding:8px 12px!important;
+  color:var(--smfs-muted)!important; background:#c9945840!important;
+}
+/* six native toggles become a persistent vertical rail */
+details:not(details details):has(> details) > details {
+  position:static!important; margin:0!important; padding:0!important;
+  border:0!important; background:none!important; box-shadow:none!important; overflow:visible!important;
+}
+details:not(details details):has(> details) > details > summary {
+  position:absolute!important; left:12px; top:188px; z-index:4;
+  width:60px; min-height:54px; margin:0!important; padding:10px 5px!important;
+  list-style:none!important; text-align:center!important; color:var(--smfs-muted)!important;
+  font:600 12px/1.8 "Microsoft YaHei",sans-serif!important; letter-spacing:.05em;
+  border:1px solid #805437a0!important; border-radius:7px!important;
+  background:linear-gradient(145deg,#f6dfb8eb,#d1a471eb)!important; cursor:pointer; user-select:none;
+  box-shadow:0 4px 12px #61361530,inset 0 1px #fff1dba0;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+details:not(details details):has(> details) > details:nth-of-type(2) > summary {top:250px;}
+details:not(details details):has(> details) > details:nth-of-type(3) > summary {top:312px;}
+details:not(details details):has(> details) > details:nth-of-type(4) > summary {top:374px;}
+details:not(details details):has(> details) > details:nth-of-type(5) > summary {top:436px;}
+details:not(details details):has(> details) > details:nth-of-type(6) > summary {top:498px;}
+details:not(details details):has(> details) > details > summary::before {
+  content:"01"; display:block; font:10px/1.4 Consolas,monospace; color:inherit; opacity:.75;
+}
+details:not(details details):has(> details) > details:nth-of-type(2) > summary::before {content:"02";}
+details:not(details details):has(> details) > details:nth-of-type(3) > summary::before {content:"03";}
+details:not(details details):has(> details) > details:nth-of-type(4) > summary::before {content:"04";}
+details:not(details details):has(> details) > details:nth-of-type(5) > summary::before {content:"05";}
+details:not(details details):has(> details) > details:nth-of-type(6) > summary::before {content:"06";}
+details:not(details details):has(> details) > details > summary::after {content:none!important;}
+details:not(details details):has(> details) > details > summary:hover {
+  border-color:#953d27!important; color:#492217!important; transform:translateX(3px);
+  box-shadow:0 0 20px #b9632d45,inset 0 0 16px #fff2d04a!important;
+}
+details:not(details details):has(> details) > details[open] > summary {
+  border-color:var(--smfs-accent)!important; color:#fff1dc!important; background:linear-gradient(140deg,#974f32,#603020)!important;
+  box-shadow:inset 3px 0 #f9c48c,0 0 22px #a3482c50!important;
+}
+details:not(details details):has(> details) summary:focus-visible {outline:2px solid #943e29; outline-offset:3px;}
+/* drawer is bound to its own message, never fixed over the app input */
+details:not(details details):has(> details) > details[open] > div {
+  display:block!important; position:absolute!important; z-index:3; right:0; top:176px;
+  width:calc(100% - 82px); height:calc(100% - 176px); min-height:400px;
+  margin:0!important; padding:20px 22px 26px!important;
+  border-left:2px solid #9c4c2c!important; border-top:1px solid #87523180!important; border-radius:9px 0 0 0;
+  background:linear-gradient(150deg,#fff0d178,#f1d4a660),url("https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/skin-parchment.png") center/cover no-repeat!important;
+  box-shadow:-12px 0 35px #48220c50,-2px 0 16px #9b502835!important; overflow:auto!important; overscroll-behavior:contain;
+  scrollbar-width:thin; scrollbar-color:#995c38 #e2c397;
+  color:var(--smfs-text)!important; text-align:left!important;
+  animation:smfs-drawer-in .3s cubic-bezier(.2,.8,.2,1);
+}
+details:not(details details):has(> details[open]) > div:first-of-type {opacity:.16; pointer-events:none;}
+details:not(details details):has(> details) > details > div::before {
+  content:"档案已展开 · 再点当前竖签关闭"; display:block; margin-bottom:16px;
+  color:var(--smfs-muted); font:11px/1.7 "Microsoft YaHei",sans-serif; letter-spacing:.08em;
+  border-bottom:1px dashed #97684780; padding-bottom:9px;
+}
+details:not(details details):has(> details) > details > div :is(p,ul,ol,li,div) {
+  color:inherit; font-size:14px; line-height:1.85; text-align:left!important;
+}
+details:not(details details):has(> details) > details > div p {padding:0!important; margin:9px 0!important;}
+details:not(details details):has(> details) > details > div :is(h2,h3,h4) {
+  margin:14px 0 10px!important; padding:0!important; color:var(--smfs-gold)!important;
+  font:600 20px/1.6 "Songti SC","SimSun",serif!important; letter-spacing:.08em;
+}
+details:not(details details):has(> details) > details > div :is(strong,b) {color:var(--smfs-gold)!important;}
+details:not(details details):has(> details) > details > div em {color:#8f3026!important; font-style:normal;}
+details:not(details details):has(> details) > details > div ul,
+details:not(details details):has(> details) > details > div ol {padding-left:21px!important; margin:8px 0!important;}
+details:not(details details):has(> details) > details > div li {padding:2px 0!important;}
+details:not(details details):has(> details) > details > div hr {border:0; height:1px; background:#99674370; margin:17px 0!important;}
+details:not(details details):has(> details) > details > div blockquote {
+  padding:10px 12px!important; margin:12px 0!important; border-left:2px solid #b8433d!important;
+  background:#c77d4a35!important; color:#6b3021!important;
+}
+/* nested native drawers are compact dossier cards, independent of the six main tabs */
+details:not(details details):has(> details) > details > div details {
+  position:static!important; margin:12px 0!important; padding:0!important;
+  border:1px solid #9b694480!important; border-radius:7px!important; background:#f9e6c6a8!important;
+  box-shadow:none!important; overflow:hidden!important;
+}
+details:not(details details):has(> details) > details > div details > summary {
+  padding:12px 13px!important; color:#4b2e1e!important; font:600 14px/1.6 "Microsoft YaHei",sans-serif!important;
+  background:linear-gradient(100deg,#e2bd89a8,#f7e0bca8)!important; cursor:pointer; list-style:none;
+  transition:background .25s,box-shadow .25s;
+}
+details:not(details details):has(> details) > details > div details > summary:hover {box-shadow:inset 3px 0 #8c3927; color:#783722!important;}
+details:not(details details):has(> details) > details > div details > summary::after {content:"＋"; float:right; color:#953c27;}
+details:not(details details):has(> details) > details > div details[open] > summary::after {content:"−";}
+details:not(details details):has(> details) > details > div details > div {padding:12px 14px!important;}
+details:not(details details):has(> details) > details > div img {
+  display:block!important; width:100%!important; height:auto!important; max-height:270px;
+  object-fit:cover!important; object-position:center 32%; border:1px solid #55504a!important;
+  border-radius:5px!important; margin:3px 0 13px!important; background:#121618;
+  box-shadow:0 8px 22px #0007; transition:transform .6s ease,filter .6s ease;
+}
+@media(hover:hover) {details:not(details details):has(> details) > details > div img:hover {transform:scale(1.025);filter:brightness(1.08);}}
+details:not(details details):has(> details) > details > div a {color:#862e24!important; text-decoration:underline;}
+details:not(details details):has(> details) > details > div table {
+  display:block; max-width:100%; overflow-x:auto; border-collapse:collapse; font-size:12px;
+}
+details:not(details details):has(> details) > details > div :is(th,td) {
+  border:1px solid #98644280!important; padding:7px 9px!important; color:var(--smfs-text)!important;
+}
+@keyframes smfs-drawer-in {from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes smfs-frame-breathe {0%,100%{box-shadow:0 18px 48px #0008,0 0 22px #ab642835,inset 0 0 0 1px #ffe2ae50}50%{box-shadow:0 18px 48px #0008,0 0 38px #bd733b65,inset 0 0 0 1px #ffdeaa80}}
+@keyframes smfs-fog-drift {from{transform:translate(-18px,12px);opacity:.55}to{transform:translate(24px,-18px);opacity:1}}
+@keyframes smfs-seal-light {0%,100%{background-position:-85% 0;opacity:.25}50%{background-position:180% 0;opacity:.9}}
+@media(min-width:900px) {
+  details:not(details details):has(> details) > details[open] > div {width:48%;}
+  details:not(details details):has(> details[open]) > div:first-of-type {margin-right:50%!important; opacity:1; pointer-events:auto;}
+  details:not(details details):has(> details[open]) > blockquote {margin-right:50%!important;}
+}
+@media(max-width:480px) {
+  details:not(details details):has(> details) {font-size:15px!important; padding-right:13px!important; min-height:670px; background-position:72% center!important;}
+  details:not(details details):has(> details) > summary {padding:14px 15px!important; font-size:13px!important;}
+  details:not(details details):has(> details) > blockquote {margin-left:71px!important; font-size:11px!important;}
+  details:not(details details):has(> details) > div:first-of-type {margin-left:71px!important;}
+  details:not(details details):has(> details) > div:first-of-type {padding:14px 13px 6px!important;}
+  details:not(details details):has(> details) > details > summary {left:8px; width:53px;}
+  details:not(details details):has(> details) > details[open] > div {width:calc(100% - 69px); padding:15px 13px 22px!important;}
+  details:not(details details):has(> details) > details > div :is(p,li,div) {font-size:13px!important;}
+}
+@media(prefers-reduced-motion:reduce) {
+  details:not(details details):has(> details),details:not(details details):has(> details)::before,
+  details:not(details details):has(> details)::after,details:not(details details):has(> details) *,
+  details:not(details details):has(> details) *::before,details:not(details details):has(> details) *::after {animation:none!important;transition:none!important;}
+}
+</style><main><header><h1>神秘复苏 · 对话卷宗</h1><p>消息区预览 / 点击左侧竖签展开侧栏 / 再次点击收起</p></header><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/school-knock.webp"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/ghost-eye.webp"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/hunger-ghost.webp"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/ghost-difference.webp"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/archive-ghost-paint.png"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/archive-headless-shadow.png"/><details open=""><summary>深夜 23:40 · 七中 · 门外有人</summary><blockquote>案件 E-001 / 已知规律：待验证 / 灵异预警：高</blockquote><div><p>三下敲门声从教室后方传来。</p><p>周正停在讲台边，撑着桌面的手开始发抖。他看了一眼门，没有再提国际刑警的身份。</p><p>“别回头。也别回答它。”</p><p>灯管发出细小的电流声。靠门的玻璃上浮着一层灰，门外站着的人没有影子。班里的手机同时失去了信号，屏幕上的时间却仍在往前走。</p><p>走廊尽头的应急灯亮了。那一点绿光照出楼梯扶手，又照出第二个一模一样的教室门。原本只有十几米的走廊，已经看不到尽头。</p><p>周正把一张皱纸推到桌角。纸上只有两行字：记下它的动作；不要把猜测当成规律。</p><p>门外第四下敲击还没有落下来。</p></div><details name="rili-details:preview-message-0:smfs-main"><summary>现场</summary><div><h3>现场态势</h3><p><strong>坐标：</strong>大昌市 · 第七中学 · 三楼教室</p><p><strong>时刻：</strong>深夜 23:40（第1天）</p><p><strong>预警：</strong>高｜走廊空间出现异常。</p><p><strong>信号：</strong>中断</p><p><strong>已知目标：</strong>保持距离，核对逃生路线。</p><blockquote>情报不足时，不把猜测当成已验证的规律。</blockquote></div></details><details name="rili-details:preview-message-0:smfs-main"><summary>事件</summary><div><h3>大事件档案</h3><p>每次对话保留当前快照，线索通过编号关联图鉴。</p><details name="rili-details:preview-message-0:smfs-events"><summary>E-001 · 七中敲门 · 处理中</summary><div><p><strong>区域：</strong>大昌市第七中学</p><p><strong>事件树：</strong>周正警告 → 敲门声出现 → 走廊异常 → 待定：查找安全路线</p><p><strong>关联图鉴：</strong>G-001 敲门鬼 / G-002 鬼眼</p><p><strong>线索：</strong>只记录目击与报告；未证实的内容标为待核实。</p></div></details><details name="rili-details:preview-message-0:smfs-events"><summary>E-002 · 饿死鬼事件 · 演示资料</summary><div><p><strong>区域：</strong>大昌市</p><p><strong>事件树：</strong>鬼婴成长 → 城市阴霾 → 阶段规律变化 → 待定：压制与收容</p><p><strong>关联图鉴：</strong>G-003 饿死鬼 / G-006 无头鬼影</p><p><strong>线索：</strong>只记录目击与报告；未证实的内容标为待核实。</p></div></details><details name="rili-details:preview-message-0:smfs-events"><summary>E-003 · 黄岗村档案 · 待核实</summary><div><p><strong>区域：</strong>黄岗村</p><p><strong>事件树：</strong>鬼棺线索 → 无声鬼域 → 待定：现场复核</p><p><strong>关联图鉴：</strong>G-004 鬼差</p><p><strong>线索：</strong>只记录目击与报告；未证实的内容标为待核实。</p></div></details><details name="rili-details:preview-message-0:smfs-events"><summary>E-004 · 鬼画档案 · 隔离中</summary><div><p><strong>区域：</strong>档案室</p><p><strong>事件树：</strong>画中空间 → 隔离报告 → 待定：核对持有者状态</p><p><strong>关联图鉴：</strong>G-005 鬼画</p><p><strong>线索：</strong>只记录目击与报告；未证实的内容标为待核实。</p></div></details></div></details><details name="rili-details:preview-message-0:smfs-main"><summary>图鉴</summary><div><h3>厉鬼图鉴</h3><p>演示：六张概念图均已解封。实际对话只显示角色已知档案。</p><details name="rili-details:preview-message-0:smfs-ghosts"><summary>G-001 · 敲门鬼</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/school-knock.webp" alt="敲门鬼 · 原创概念图"/><p><strong>关联事件：</strong>七中敲门事件 / E-001</p><p><strong>形态：</strong>门外的敲击声与走廊里的老人</p><p><strong>触发情报：</strong>重复敲击声与死亡有关；完整触发链尚未验证</p><p><strong>处置方向：</strong>避开直接接触；记录响声与死亡的时间差</p><p><strong>当前状态：</strong>游荡</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-0:smfs-ghosts"><summary>G-002 · 鬼眼</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/ghost-eye.webp" alt="鬼眼 · 原创概念图"/><p><strong>关联事件：</strong>七中事件 / E-001</p><p><strong>形态：</strong>额头睁开的猩红眼睛</p><p><strong>触发情报：</strong>暂按已驾驭灵异记录；使用规律由现场验证</p><p><strong>处置方向：</strong>使用伴随复苏代价，不能无限开启鬼域</p><p><strong>当前状态：</strong>已被驾驭</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-0:smfs-ghosts"><summary>G-003 · 饿死鬼</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/hunger-ghost.webp" alt="饿死鬼 · 原创概念图"/><p><strong>关联事件：</strong>大昌市灾难 / E-002</p><p><strong>形态：</strong>青黑阴霾中的成长型实体</p><p><strong>触发情报：</strong>阶段变化会改变触发条件；不可把某阶段经验当成通用规律</p><p><strong>处置方向：</strong>需要情报交叉验证与更强灵异压制</p><p><strong>当前状态：</strong>总部高危档案</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-0:smfs-ghosts"><summary>G-004 · 鬼差</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/ghost-difference.webp" alt="鬼差 · 原创概念图"/><p><strong>关联事件：</strong>黄岗村 / E-003</p><p><strong>形态：</strong>黑暗鬼域里的无声轮廓</p><p><strong>触发情报：</strong>压制能力与灵异数量有关；当前报告待现场复核</p><p><strong>处置方向：</strong>避免主动接触鬼棺；人数不是可靠安全证明</p><p><strong>当前状态：</strong>失联 / 待核实</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-0:smfs-ghosts"><summary>G-005 · 鬼画</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/archive-ghost-paint.png" alt="鬼画 · 原创概念图"/><p><strong>关联事件：</strong>鬼画档案 / E-004</p><p><strong>形态：</strong>旧画框内的模糊人影</p><p><strong>触发情报：</strong>画中空间与记忆关联仅为该卡已解封资料示例</p><p><strong>处置方向：</strong>隔离、封存，避免无证据推断</p><p><strong>当前状态：</strong>隔离中</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-0:smfs-ghosts"><summary>G-006 · 无头鬼影</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/archive-headless-shadow.png" alt="无头鬼影 · 原创概念图"/><p><strong>关联事件：</strong>驭鬼者档案 / E-002</p><p><strong>形态：</strong>不与人体同步的无头影子</p><p><strong>触发情报：</strong>影子行为异常；更详细规律需验证</p><p><strong>处置方向：</strong>保持观察并核对既有驾驭代价</p><p><strong>当前状态：</strong>被驾驭 / 监测中</p><p><em>概念图不提供新的杀人规律。</em></p></div></details></div></details><details name="rili-details:preview-message-0:smfs-main"><summary>人物</summary><div><h3>主角档案</h3><p><strong>身份：</strong>尚未登记的幸存者</p><p><strong>厉鬼复苏度：</strong>暂无；未确认驾驭。</p><p><strong>身体：</strong>当前没有确认伤势。</p><p><strong>物品：</strong>手机、书包</p><hr/><h3>接触人物 · 周正</h3><p>国际刑警；正在警告学生。身体状态异常，具体原因尚未公开。</p></div></details><details name="rili-details:preview-message-0:smfs-main"><summary>记忆</summary><div><h3>长期记忆</h3><ol><li>第1天｜七中｜周正警告鬼真实存在。</li></ol><h3>短期记忆</h3><ol><li>23:39｜教室｜信号消失。</li><li>23:40｜后门｜三下敲击。</li><li>23:40｜走廊｜楼梯与教室出现重复。</li></ol><p><strong>未解之谜：</strong>门外老人是否是敲门声的来源？</p></div></details><details name="rili-details:preview-message-0:smfs-main"><summary>行动</summary><div><h3>行动备忘</h3><ol><li>观察门外轮廓与响声的间隔。风险：暴露视线。</li><li>向周正核实已验证情报。风险：他可能无法继续支撑。</li><li>检查其他出口。风险：走廊已经改变。</li></ol><p>这些是可选择的方向，点击竖签只展开资料。</p></div></details></details>
+<link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/school-knock.webp"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/ghost-eye.webp"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/hunger-ghost.webp"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/ghost-difference.webp"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/archive-ghost-paint.png"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/archive-headless-shadow.png"/><details open=""><summary>深夜 23:41 · 七中 · 走廊重叠</summary><blockquote>下一轮消息示例 / 点击不影响上一轮抽屉</blockquote><div><p>走廊里的应急灯又亮起一盏。</p><p>新出现的灯下，仍然是同一扇教室后门。墙上的班级牌没有改变，门缝下却多了一条细黑的影子。</p><p>周正示意身旁的人保持安静。他留在原地，等下一次敲击。</p></div><details name="rili-details:preview-message-1:smfs-main"><summary>现场</summary><div><h3>现场态势</h3><p><strong>坐标：</strong>大昌市 · 第七中学 · 三楼教室</p><p><strong>时刻：</strong>深夜 23:40（第1天）</p><p><strong>预警：</strong>高｜走廊空间出现异常。</p><p><strong>信号：</strong>中断</p><p><strong>已知目标：</strong>保持距离，核对逃生路线。</p><blockquote>情报不足时，不把猜测当成已验证的规律。</blockquote></div></details><details name="rili-details:preview-message-1:smfs-main"><summary>事件</summary><div><h3>大事件档案</h3><p>每次对话保留当前快照，线索通过编号关联图鉴。</p><details name="rili-details:preview-message-1:smfs-events"><summary>E-001 · 七中敲门 · 处理中</summary><div><p><strong>区域：</strong>大昌市第七中学</p><p><strong>事件树：</strong>周正警告 → 敲门声出现 → 走廊异常 → 待定：查找安全路线</p><p><strong>关联图鉴：</strong>G-001 敲门鬼 / G-002 鬼眼</p><p><strong>线索：</strong>只记录目击与报告；未证实的内容标为待核实。</p></div></details><details name="rili-details:preview-message-1:smfs-events"><summary>E-002 · 饿死鬼事件 · 演示资料</summary><div><p><strong>区域：</strong>大昌市</p><p><strong>事件树：</strong>鬼婴成长 → 城市阴霾 → 阶段规律变化 → 待定：压制与收容</p><p><strong>关联图鉴：</strong>G-003 饿死鬼 / G-006 无头鬼影</p><p><strong>线索：</strong>只记录目击与报告；未证实的内容标为待核实。</p></div></details><details name="rili-details:preview-message-1:smfs-events"><summary>E-003 · 黄岗村档案 · 待核实</summary><div><p><strong>区域：</strong>黄岗村</p><p><strong>事件树：</strong>鬼棺线索 → 无声鬼域 → 待定：现场复核</p><p><strong>关联图鉴：</strong>G-004 鬼差</p><p><strong>线索：</strong>只记录目击与报告；未证实的内容标为待核实。</p></div></details><details name="rili-details:preview-message-1:smfs-events"><summary>E-004 · 鬼画档案 · 隔离中</summary><div><p><strong>区域：</strong>档案室</p><p><strong>事件树：</strong>画中空间 → 隔离报告 → 待定：核对持有者状态</p><p><strong>关联图鉴：</strong>G-005 鬼画</p><p><strong>线索：</strong>只记录目击与报告；未证实的内容标为待核实。</p></div></details></div></details><details name="rili-details:preview-message-1:smfs-main"><summary>图鉴</summary><div><h3>厉鬼图鉴</h3><p>演示：六张概念图均已解封。实际对话只显示角色已知档案。</p><details name="rili-details:preview-message-1:smfs-ghosts"><summary>G-001 · 敲门鬼</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/school-knock.webp" alt="敲门鬼 · 原创概念图"/><p><strong>关联事件：</strong>七中敲门事件 / E-001</p><p><strong>形态：</strong>门外的敲击声与走廊里的老人</p><p><strong>触发情报：</strong>重复敲击声与死亡有关；完整触发链尚未验证</p><p><strong>处置方向：</strong>避开直接接触；记录响声与死亡的时间差</p><p><strong>当前状态：</strong>游荡</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-1:smfs-ghosts"><summary>G-002 · 鬼眼</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/ghost-eye.webp" alt="鬼眼 · 原创概念图"/><p><strong>关联事件：</strong>七中事件 / E-001</p><p><strong>形态：</strong>额头睁开的猩红眼睛</p><p><strong>触发情报：</strong>暂按已驾驭灵异记录；使用规律由现场验证</p><p><strong>处置方向：</strong>使用伴随复苏代价，不能无限开启鬼域</p><p><strong>当前状态：</strong>已被驾驭</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-1:smfs-ghosts"><summary>G-003 · 饿死鬼</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/hunger-ghost.webp" alt="饿死鬼 · 原创概念图"/><p><strong>关联事件：</strong>大昌市灾难 / E-002</p><p><strong>形态：</strong>青黑阴霾中的成长型实体</p><p><strong>触发情报：</strong>阶段变化会改变触发条件；不可把某阶段经验当成通用规律</p><p><strong>处置方向：</strong>需要情报交叉验证与更强灵异压制</p><p><strong>当前状态：</strong>总部高危档案</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-1:smfs-ghosts"><summary>G-004 · 鬼差</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/ghost-difference.webp" alt="鬼差 · 原创概念图"/><p><strong>关联事件：</strong>黄岗村 / E-003</p><p><strong>形态：</strong>黑暗鬼域里的无声轮廓</p><p><strong>触发情报：</strong>压制能力与灵异数量有关；当前报告待现场复核</p><p><strong>处置方向：</strong>避免主动接触鬼棺；人数不是可靠安全证明</p><p><strong>当前状态：</strong>失联 / 待核实</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-1:smfs-ghosts"><summary>G-005 · 鬼画</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/archive-ghost-paint.png" alt="鬼画 · 原创概念图"/><p><strong>关联事件：</strong>鬼画档案 / E-004</p><p><strong>形态：</strong>旧画框内的模糊人影</p><p><strong>触发情报：</strong>画中空间与记忆关联仅为该卡已解封资料示例</p><p><strong>处置方向：</strong>隔离、封存，避免无证据推断</p><p><strong>当前状态：</strong>隔离中</p><p><em>概念图不提供新的杀人规律。</em></p></div></details><details name="rili-details:preview-message-1:smfs-ghosts"><summary>G-006 · 无头鬼影</summary><div><img src="https://cdn.jsdelivr.net/gh/hykhxy/shenmifusu-phone-public@bd2d0026f525d84f3aaada78b05edf91e228a40a/assets/archive-headless-shadow.png" alt="无头鬼影 · 原创概念图"/><p><strong>关联事件：</strong>驭鬼者档案 / E-002</p><p><strong>形态：</strong>不与人体同步的无头影子</p><p><strong>触发情报：</strong>影子行为异常；更详细规律需验证</p><p><strong>处置方向：</strong>保持观察并核对既有驾驭代价</p><p><strong>当前状态：</strong>被驾驭 / 监测中</p><p><em>概念图不提供新的杀人规律。</em></p></div></details></div></details><details name="rili-details:preview-message-1:smfs-main"><summary>人物</summary><div><h3>主角档案</h3><p><strong>身份：</strong>尚未登记的幸存者</p><p><strong>厉鬼复苏度：</strong>暂无；未确认驾驭。</p><p><strong>身体：</strong>当前没有确认伤势。</p><p><strong>物品：</strong>手机、书包</p><hr/><h3>接触人物 · 周正</h3><p>国际刑警；正在警告学生。身体状态异常，具体原因尚未公开。</p></div></details><details name="rili-details:preview-message-1:smfs-main"><summary>记忆</summary><div><h3>长期记忆</h3><ol><li>第1天｜七中｜周正警告鬼真实存在。</li></ol><h3>短期记忆</h3><ol><li>23:39｜教室｜信号消失。</li><li>23:40｜后门｜三下敲击。</li><li>23:40｜走廊｜楼梯与教室出现重复。</li></ol><p><strong>未解之谜：</strong>门外老人是否是敲门声的来源？</p></div></details><details name="rili-details:preview-message-1:smfs-main"><summary>行动</summary><div><h3>行动备忘</h3><ol><li>观察门外轮廓与响声的间隔。风险：暴露视线。</li><li>向周正核实已验证情报。风险：他可能无法继续支撑。</li><li>检查其他出口。风险：走廊已经改变。</li></ol><p>这些是可选择的方向，点击竖签只展开资料。</p></div></details></details><footer>这是消息格式示例。实际对话中的档案随剧情更新；图片使用公开 HTTPS 外链。</footer></main></html>
